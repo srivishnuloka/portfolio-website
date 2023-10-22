@@ -1,0 +1,20 @@
+/* Set the page background color to light gray */
+body {
+    background-color: rgb(185, 182, 182);
+    margin: 40px;
+    text-align: center;
+}
+
+/* Center all headings (h1, h2, h3, etc.) horizontally */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: rgb(6, 36, 180);
+}
+
+/* Set the text color of paragraphs to white */
+p {
+    color: rgb(6, 36, 180);
+    padding: 40px;
+}
+
+
