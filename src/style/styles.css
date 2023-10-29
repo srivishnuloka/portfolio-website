@@ -11,10 +11,27 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(1,7, 40);
 }
 
-/* Set the text color of paragraphs to white */
-p {
-    color: rgb(1, 7, 40);
-    padding: 40px;
-}
-
-
+/* Default styles for all devices */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .item {
+    padding: 20px;
+    text-align: center;
+    /* Add any other common styles for items here */
+  }
+  
+  /* Styles for devices with a maximum width of 768px (e.g., mobile devices) */
+  @media screen and (orientation: portrait) {
+    .container {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(6, auto);
+      font-size: large;
+    }
+  }
+  
+  
