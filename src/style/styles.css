@@ -1,7 +1,12 @@
+/**/
+
+
 /* Set the page background color to light gray */
 body {
-    background-color: rgb(185, 182, 182);
-    margin: 40px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
     text-align: center;
 }
 
@@ -14,9 +19,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Default styles for all devices */
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+    background-color: rgb(196, 196, 196);
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(6, auto);
+    row-gap: 10px;
+    height: 100vh;
+    accent-color: green;
   }
   
   .item {
@@ -24,14 +32,24 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     /* Add any other common styles for items here */
   }
+
+  /* Styles for landscape orientation (e.g., computers) */
+  @media screen and (orientation: landscape) {
+    .container {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(6, auto);
+      font-size: medium;
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+  }
   
-  /* Styles for devices with a maximum width of 768px (e.g., mobile devices) */
+  /* Styles for portrait orientation (e.g., mobile devices) */
   @media screen and (orientation: portrait) {
     .container {
       grid-template-columns: repeat(1, auto);
       grid-template-rows: repeat(6, auto);
-      font-size: large;
+      font-size: medium;
     }
   }
-  
   
