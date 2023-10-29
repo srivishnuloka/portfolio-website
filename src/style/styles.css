@@ -5,8 +5,9 @@
 body {
     background-color: rgb(255, 255, 255);
     margin-top: 0px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0px;
     text-align: center;
     
 }
@@ -40,12 +41,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(196, 196, 196);
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(6, auto);
-    row-gap: 10px;
     height: 100vh;
   }
   
   .item {
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     /* Add any other common styles for items here */
   }
