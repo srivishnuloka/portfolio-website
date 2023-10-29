@@ -8,7 +8,25 @@ body {
     margin-left: 40px;
     margin-right: 40px;
     text-align: center;
+    
 }
+
+/* Default image styles */
+.image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    transition: border-color 0.5s; /* Add a transition for a smooth effect */
+    object-fit: cover;
+  }
+  
+  /* Styles for the image on hover */
+  .image-container:hover img {
+    padding: 5px;
+    border: 3px solid #0808e3; /* Change the border color to your accent color (e.g., orange) */
+  }
 
 /* Center all headings (h1, h2, h3, etc.) horizontally */
 h1, h2, h3, h4, h5, h6 {
@@ -24,7 +42,6 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-rows: repeat(6, auto);
     row-gap: 10px;
     height: 100vh;
-    accent-color: green;
   }
   
   .item {
@@ -52,4 +69,3 @@ h1, h2, h3, h4, h5, h6 {
       font-size: medium;
     }
   }
-  
