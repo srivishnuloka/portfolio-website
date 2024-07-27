@@ -2,9 +2,8 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-
 const app = express();
-const port = 443;  // You can use any port number you prefer
+const port = 443;  // HTTPS port
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -16,9 +15,9 @@ app.get('/', (req, res) => {
 
 // Load SSL/TLS certificates
 const options = {
-  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'cert.pem')),
-  ca: fs.readFileSync(path.join(__dirname, 'ca.pem'))
+  key: fs.readFileSync(path.join(__dirname, 'certs/key.pem')),
+  cert: fs.readFileSync(path.join(__dirname, 'certs/cert.pem')),
+  ca: fs.readFileSync(path.join(__dirname, 'certs/ca.pem'))
 };
 
 // Create an HTTPS server
