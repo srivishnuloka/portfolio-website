@@ -1,8 +1,10 @@
-const express = require('express');
+const https = require('https');
+const fs = require('fs');
 const path = require('path');
+const express = require('express');
 
 const app = express();
-const port = 3000;  // You can use any port number you prefer
+const port = 443;  // You can use any port number you prefer
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -12,7 +14,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+// Load SSL/TLS certificates
+const options = {
+  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
+  cert: fs.readFileSync(path.join(__dirname, 'cert.pem')),
+  ca: fs.readFileSync(path.join(__dirname, 'ca.pem'))
+};
+
+// Create an HTTPS server
+https.createServer(options, app).listen(port, () => {
+  console.log('HTTPS Server running on port 443');
 });
